@@ -1,0 +1,386 @@
+/* solicitudes/static/solicitudes/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #2abd17;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 12px 8px 12px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px; /* Espacio para el sidebar */
+    padding: 20px; /* Espaciado interno */
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: rgb(242, 250, 244);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(33, 173, 20, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+}
+.image {
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: relative; /* Necesario para posicionar el logo */
+    width: 359px; /* Ancho del contenedor del logo */
+    height: 100px; /* Altura del contenedor del logo */
+    overflow: hidden; /* Oculta cualquier parte del logo que se desplace fuera del contenedor */
+    margin: 20px auto; /* Centra el contenedor en la página */
+}
+.image2{
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: relative; /* Necesario para posicionar el logo */
+    width: 247px; /* Ancho del contenedor del logo */
+    height: 100px; /* Altura del contenedor del logo */
+    overflow: hidden; /* Oculta cualquier parte del logo que se desplace fuera del contenedor */
+    margin: 20px auto; /* Centra el contenedor en la página */
+}
+.image3{
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: relative; /* Necesario para posicionar el logo */
+    width: 147px; /* Ancho del contenedor del logo */
+    height: 100px; /* Altura del contenedor del logo */
+    overflow: hidden; /* Oculta cualquier parte del logo que se desplace fuera del contenedor */
+    margin: -5px auto; /* Centra el contenedor en la página */
+}
+/* styles.css */
+
+/* Estilo general del body */
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    background-color: #57e72bce; /* Color de fondo */
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Sin márgenes */
+}
+/* Contenedor del formulario */
+.login-container {
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaciado interno */
+    width: 300px; /* Ancho fijo */
+}
+        
+/* Título del formulario */
+h1 {
+    text-align: center; /* Centrar el texto */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo de las etiquetas */
+label {
+    display: block; /* Hacer que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+    color: #555; /* Color de las etiquetas */
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio debajo de los campos */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
+}
+
+/* Estilo del botón */
+button {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    background-color: #0caf1ade; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+button:hover {
+    background-color: #24f709; /* Color más oscuro al pasar el mouse */
+}
+
+/* Mensaje de error */
+.error {
+    color: red; /* Color rojo para mensajes de error */
+    text-align: center; /* Centrar el texto */
+}
+.container1{
+    max-width: 600px;
+    margin: auto;
+    background: rgb(242, 250, 244);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(33, 173, 20, 0.1);
+}
+/* solicitudes/static/solicitudes/styles.css */
+#resultado {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#resultado p {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#resultado p[style*="color: green"] {
+    background-color: #e6ffe6;  /* Fondo verde claro para mensajes de éxito */
+}
+
+#resultado p[style*="color: red"] {
+    background-color: #ffe6e6;  /* Fondo rojo claro para mensajes de error */
+}
+/* Estilos para el contenedor de editar */
+.editar-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.editar-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+/* Estilos generales para la página de confirmación de eliminación */
+.eliminar-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.eliminar-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.eliminar-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.eliminar-container form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.eliminar-container form button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.eliminar-container form button:hover {
+    background-color: #d32f2f;
+}
+
+.eliminar-container form a {
+    padding: 10px 20px;
+    background-color: #ec0c0c;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.eliminar-container form a:hover {
+    background-color: #fc1515;
+}
+/* solicitudes/static/solicitudes/styles.css */
+/* Estilos para el formulario desplegable */
+.formulario-editar {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-guardar {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-guardar:hover {
+    background-color: #45a049;
+}
+
+.btn-cancelar {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: #d32f2f;
+}
+
+.btn-editar {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+    background-color: #f51010;
+}
+
+.btn-eliminar {
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #d32f2f;
+}

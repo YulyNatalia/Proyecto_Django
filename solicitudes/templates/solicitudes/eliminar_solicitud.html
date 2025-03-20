@@ -1,0 +1,16 @@
+<!-- solicitudes/templates/solicitudes/confirmar_eliminar.html -->
+{% extends 'solicitudes/inventario.html' %} <!-- Si tienes una plantilla base -->
+{% load static %}
+
+{% block content %}
+<div class="eliminar-container">
+    <h1>¿Estás seguro de eliminar esta solicitud?</h1>
+    <p><strong>Solicitante:</strong> {{ solicitud.nombre_solicitante }}</p>
+    <p><strong>Tipo de Material:</strong> {{ solicitud.tipo_material }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sí, Eliminar</button>
+        <a href="{% url 'inventario' %}">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

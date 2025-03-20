@@ -1,0 +1,113 @@
+<!-- solicitudes/templates/solicitudes/home.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="{% static 'solicitudes/styles.css' %}">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidenav">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="#">Solicitudes Pendientes</a>
+        <a href="{% url 'inventario' %}">Inventario</a>
+        <a href="#">Reportes</a>
+        <a href="#">Configuraciones</a>
+        <a href="{% url 'solicitar_material' %}">Solicitar Material</a>
+        <!-- Botón de Logout -->
+        <form action="{% url 'logout' %}" method="post" style="position: absolute; bottom: 20px; width: 100%;">
+            {% csrf_token %}
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #f44336; color: white; border: none; cursor: pointer;">
+                Cerrar Sesión
+            </button>
+        </form>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main">
+        <div class="container">
+            <h1>Listado de Solicitudes de Material</h1>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre Solicitante</th>
+                        <th>Tipo Material</th>
+                        <th>Cantidad</th>
+                        <th>Comentarios</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for solicitud in solicitudes %}
+                    <tr>
+                        <td>{{ solicitud.id }}</td>
+                        <td>{{ solicitud.nombre_solicitante }}</td>
+                        <td>{{ solicitud.tipo_material }}</td>
+                        <td>{{ solicitud.cantidad }}</td>
+                        <td>{{ solicitud.comentarios }}</td>
+                        <td><p>
+                            <!-- Botón para editar -->
+                            <button onclick="mostrarFormularioEditar({{ solicitud.id }})" class="btn-editar">Editar</button>
+                            <!-- Formulario para eliminar -->
+                            <form action="{% url 'eliminar_solicitud' solicitud.id %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <p><button type="submit" class="btn-eliminar" onclick="return confirm('¿Estás seguro de eliminar esta solicitud?');">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <!-- Formulario desplegable para editar -->
+                    <tr id="formulario-editar-{{ solicitud.id }}" class="formulario-editar" style="display: none;">
+                        <td colspan="6">
+                            <form method="post" action="{% url 'editar_solicitud' solicitud.id %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="nombre_solicitante">Nombre Solicitante:</label>
+                                    <input type="text" name="nombre_solicitante" value="{{ solicitud.nombre_solicitante }}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipo_material">Tipo de Material:</label>
+                                    <input type="text" name="tipo_material" value="{{ solicitud.tipo_material }}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cantidad">Cantidad:</label>
+                                    <input type="number" name="cantidad" value="{{ solicitud.cantidad }}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comentarios">Comentarios:</label>
+                                    <textarea name="comentarios">{{ solicitud.comentarios }}</textarea>
+                                </div>
+                                <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                                <button type="button" onclick="ocultarFormularioEditar({{ solicitud.id }})" class="btn-cancelar">Cancelar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Script para mostrar/ocultar el formulario desplegable -->
+    <script>
+        function mostrarFormularioEditar(id) {
+            // Oculta todos los formularios de edición
+            document.querySelectorAll('.formulario-editar').forEach(form => {
+                form.style.display = 'none';
+            });
+            // Muestra el formulario de edición correspondiente
+            const formulario = document.getElementById(`formulario-editar-${id}`);
+            formulario.style.display = 'table-row';
+        }
+
+        function ocultarFormularioEditar(id) {
+            // Oculta el formulario de edición
+            const formulario = document.getElementById(`formulario-editar-${id}`);
+            formulario.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

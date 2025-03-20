@@ -1,0 +1,40 @@
+<!-- solicitudes/templates/solicitudes/home.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="{% static 'solicitudes/styles.css' %}">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidenav">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="#">Solicitudes Pendientes</a>
+        <a href="{% url 'inventario' %}">Inventario</a>
+        <a href="#">Reportes</a>
+        <a href="#">Configuraciones</a>
+        <a href="{% url 'solicitar_material' %}">Solicitar Material</a>  <!-- Enlace corregido -->
+        <!-- Botón de Logout -->
+        <form action="{% url 'logout' %}" method="post" style="position: absolute; bottom: 20px; width: 100%;">
+            {% csrf_token %}
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #f44336; color: white; border: none; cursor: pointer;">
+                Cerrar Sesión
+            </button>
+        </form>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main">
+        <div class="container">
+            <div class="image">
+                <img src="{% static 'img/logoSena.png' %}" alt="Descripción de la imagen" class="img/logoSena.png">
+            </div>
+            <h1>¡Bienvenido!</h1>
+            <p>Gracias por visitar nuestro sitio. Estamos encantados de tenerte aquí.</p>
+        </div>
+    </div>
+</body>
+</html>
